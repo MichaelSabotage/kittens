@@ -1,0 +1,11 @@
+<ol>
+<% @kittens.each do |kitten| %>
+  <li> 
+    <p> <%= link_to kitten.name , kitten_path(kitten) %> </p>
+    <p> <%= kitten.age %>  years old </p>
+    <%= link_to "Delete kitten", kitten_path(kitten), data: { "turbo-method": :delete } %>
+  </li>
+<% end %>
+</ol>
+<br>
+<%= link_to "New kitten", new_kitten_path %>
